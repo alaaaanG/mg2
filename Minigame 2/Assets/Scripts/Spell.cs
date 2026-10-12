@@ -18,16 +18,17 @@ public class Spell : MonoBehaviour
         // STEP 1 -------------------------------------------------------------
         // Write a line of code to SUBTRACT the value of 'time' from '_timeLeft'.
         float time = Time.deltaTime;
+        _timeLeft -= time;
         
         // STEP 1 -------------------------------------------------------------
 
         // STEP 2 -------------------------------------------------------------
         // Uncomment and fix the if statement.
-        //if _timeLeft <= 0.0
-        //{
-        //    gameObject.SetActive(false);
-        //    _collider.enabled = false;
-        //}
+        if (_timeLeft <= 0.0f)
+        {
+            _collider.enabled = false;
+            gameObject.SetActive(false);
+        }
         // STEP 2 -------------------------------------------------------------
     }
 }
